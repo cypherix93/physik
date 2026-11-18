@@ -16,6 +16,8 @@ Every theory gets its own workspace under `theories/`. Inside it:
 | `journal.md` | The running story: what we thought, what we tried, what changed our minds. Append-only |
 | `experiments/` | One folder per test. Each states its question, its prediction, and its kill condition before any code runs |
 
+Alongside the theories, `notes/` is a shared cache of checked facts: one idea per note, each tied to a source we have opened and confirmed. Theories come and go; the notes stay and get reused. See [`notes/README.md`](notes/README.md).
+
 Experiments are self-contained. One might be forty lines of Python, another a symbolic tensor calculation, another a fit against public survey data. Each carries its own dependencies and its own instructions, so they never fight over tooling.
 
 ## Theories

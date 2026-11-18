@@ -19,7 +19,9 @@ theories/NNN-short-name/
       README.md    question, prediction, kill condition, method, result
       run.py       (or whatever the experiment needs)
       results/     outputs worth keeping: numbers, plots, tables
-templates/         starting points for a theory and an experiment
+notes/             shared knowledge cache, used by every theory (see Knowledge notes)
+  sources/         one note per paper or dataset
+templates/         starting points for a theory, an experiment, and notes
 ```
 
 - Number theories and experiments in the order they are created, zero-padded to three digits.
@@ -65,10 +67,34 @@ Say plainly what kind of evidence a result is. A simulation that agrees with a t
 - An experiment may use anything else (Julia, C, a proof assistant, a GR package) if the job calls for it. Its README must say what to install and the one command that runs it.
 - Large downloaded datasets go in a `data/` folder inside the experiment and are git-ignored; the README records where they came from and how to fetch them.
 
+## Knowledge notes
+
+`notes/` is the lab's long-term memory: checked facts that any theory can build on. It follows the zettelkasten method loosely. The full conventions and the list of entry points are in `notes/README.md`; the short version:
+
+- **One idea per note.** The title states the idea as a sentence, and the file name is that sentence as a slug. No numbering, so parallel branches never collide.
+- **Two kinds of note.** A source note (`notes/sources/author-year-keyword.md`) records one paper or dataset: what it is, how it was checked, and what it says. A claim note (`notes/some-claim.md`) states one fact or idea in our own words and links the sources that back it.
+- **Link freely** with `[[file-name-without-extension]]`. A note with no links in or out is a note nobody will find. Hub notes (`notes/hub-topic.md`) are the entry points for a topic.
+- **Every note carries a standing**: `established`, `contested`, `proposal` (one author or group's idea), or `ours` (worked out in this repo, with a link to the experiment).
+- **Only checked material goes in.** A source note is written only after its identifier has been opened and its title, authors and claim confirmed, and it records the date and what was checked. Anything taken from deeper in a paper than was read is marked as such.
+- **Notes hold knowledge, not the story.** What we thought and why belongs in a theory's journal. A note should still make sense to someone who has never seen the theory that prompted it.
+- Before a literature search, check `notes/` first. After one, file what was confirmed and replace "(from memory, unverified)" markers in theory files with links to notes.
+
 ## Journal
 
 `journal.md` is the story of the theory, newest entry at the bottom. Each entry has a date heading and covers what was discussed, what was decided, and what changed. Write it so that someone reading only the journal could follow why the theory stands where it stands. Update it at the end of any turn that moved the theory forward.
 
-## Git
+## Git, branches and worktrees
 
-Commit to `master` for now. One commit per meaningful step (a new theory, an experiment's setup, an experiment's result). Repo rules will be defined later.
+Several theories are worked on at once, each in its own branch and worktree, so sessions never trip over each other.
+
+- **One thread, one branch.** Work on a theory happens on a branch named `theory/NNN-short-name`. Repo-wide changes that are not tied to a theory (these rules, templates, tooling) use `lab/short-name`.
+- **Worktrees live in `.claude/worktrees/`**, which is git-ignored. The folder is the branch name with the slash turned into a dash, for example `.claude/worktrees/theory-001-black-hole-universe`.
+- **Create it from local `master`**, then switch the session into it:
+  ```
+  git worktree add .claude/worktrees/theory-001-black-hole-universe -b theory/001-black-hole-universe master
+  ```
+- **Claim a theory's number on `master` first.** Add its row to the table in the root `README.md` and commit that before branching, so two branches cannot both take the same number.
+- **Stay in your lane.** A theory branch edits its own `theories/NNN-.../` folder and adds to `notes/`. It leaves other theories' folders alone.
+- **Notes are shared.** Add notes on any branch. If a note you need already exists, extend it instead of writing a second one. Slug file names keep collisions rare, and a real collision means two threads found the same fact and should be merged by hand.
+- **One commit per meaningful step**: a new theory, an experiment's setup, an experiment's result, a batch of notes.
+- **Merging to `master` and pushing are the human's call.** Ask before doing either. Remove a worktree only after its branch has been merged or the human says to drop it.
