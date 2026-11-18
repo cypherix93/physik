@@ -36,3 +36,21 @@ The human gave the fuller version (quoted on the theory card): a black hole draw
 **Mass and area.** `[known]` Mass is proportional to radius, so area goes as mass squared. What is proportional to area is entropy, the amount of information a black hole can hold (Bekenstein–Hawking). That is the root of the holographic principle, which says a region's information fits on its boundary, one dimension down. The human's picture keeps the same number of dimensions, so the two ideas are different and C6 needs restating.
 
 **Proposed first experiment (not built).** Plot the black hole outline against the measured expansion history of our universe and see whether any version of the funnel flares the way the data does.
+
+## 2026-11-17 (3): first experiment, the funnel outline
+
+The human confirmed Claude's reading of the picture and asked for the first test. They also said the standard model and the holographic principle are close to their heart, so overlap with those is welcome.
+
+[Experiment 001](experiments/001-funnel-outline/) compared the expansion history of a time-flipped black hole interior with the measured one. The prediction and kill conditions were committed before any code existed (commit 2807d7a).
+
+**Result.** `[numeric]` No black hole outline ever speeds up. The empty black hole and two of the matter-filled variants have a deceleration parameter of at least 0.5 throughout; the third stays above zero. The measured universe has been speeding up for 6.1 billion years and sits at −0.53 today. The empty black hole also grows unevenly: one direction of space shrinks while the other two grow. All 25 calibration checks passed.
+
+**What it means.** C3 is refuted in its plain form, and the theory moves from open to wounded. The black hole's shape is not what makes the expansion accelerate, as long as only standard relativity and ordinary matter are involved. This was Claude's expectation going in, so the test confirmed a known piece of physics more than it discovered anything.
+
+**What survived.** C1 came out partly supported: inside an empty black hole the radius does act as time, free-falling clocks do start at the singularity, and the early growth follows the same law as our universe's matter era.
+
+**The pointer.** `[derived]` In the matter-filled version the equations for the inside do not contain the horizon at all. The inside cannot feel how near the mouth is. So the surviving form of C3 is: something beyond standard relativity links the horizon to the expansion inside. That is where the holographic principle could enter the theory.
+
+**Side findings.** The empty black hole's outline is exactly the outline of a matter-filled ball that started at rest. Every black hole outline implies a universe younger than 13.8 billion years (8.2 to 11.7 in the examples run).
+
+Next: a literature pass on proposals that tie dark energy to a horizon, then a second experiment testing one such rule against the measured expansion history.

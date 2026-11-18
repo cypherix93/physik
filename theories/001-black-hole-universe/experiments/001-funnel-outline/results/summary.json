@@ -1,0 +1,224 @@
+{
+  "measured_universe": {
+    "parameter_set": "astropy.cosmology.Planck18",
+    "H0_km_s_Mpc": 67.66,
+    "hubble_time_Gyr": 14.451555153425794,
+    "age_Gyr": 13.786885304510932,
+    "q_today": -0.5332298685540714,
+    "H0_times_age": 0.954007036484423,
+    "speeding_up_since_size": 0.6091044232558334,
+    "speeding_up_since_redshift": 0.6417546184523182,
+    "speeding_up_since_Gyr_ago": 6.14505736291634,
+    "q_min": -0.9996080606835742,
+    "q_max": 0.9998306359359876
+  },
+  "empty_black_hole": {
+    "q_min": 0.5000005000005,
+    "q_at_start": 0.5000005000005,
+    "q_at_horizon": "grows without limit",
+    "ever_speeds_up": false,
+    "volume_average_ever_speeds_up": false,
+    "evenness_ratio_closest_to_1": -0.5000005000005,
+    "evenness_ratio_range": [
+      -499999.9999856222,
+      -0.5000005000005
+    ],
+    "third_direction": "shrinks throughout while the other two grow",
+    "lifetime_in_units_of_rs_over_c": 1.5707963267948564,
+    "example_today_halfway_to_horizon": {
+      "implied_age_Gyr": 8.248894598049302,
+      "time_left_until_horizon_Gyr": 37.15200490489973
+    }
+  },
+  "matter_filled_black_hole": {
+    "smallest_q_over_all_variants_and_all_time": 5.00500499999499e-10,
+    "ever_speeds_up": false,
+    "evenness_ratio": 1.0,
+    "examples": [
+      {
+        "variant": "ball that started at rest (bound)",
+        "omega": 2.0,
+        "q_start": 0.5,
+        "q_today": 1.0,
+        "q_far_future": "grows without limit",
+        "largest_size_reached": 2.0,
+        "implied_age_Gyr": 8.248894598049299
+      },
+      {
+        "variant": "ball that fell from far away (marginal)",
+        "omega": 1.0,
+        "q_start": 0.5,
+        "q_today": 0.5,
+        "q_far_future": 0.5,
+        "largest_size_reached": "no limit",
+        "implied_age_Gyr": 9.634370102283864
+      },
+      {
+        "variant": "ball that fell with extra speed (unbound)",
+        "omega": 0.3,
+        "q_start": 0.5,
+        "q_today": 0.15,
+        "q_far_future": 2.1428571428562242e-13,
+        "largest_size_reached": "no limit",
+        "implied_age_Gyr": 11.688320327442678
+      }
+    ]
+  },
+  "verdicts": {
+    "empty_black_hole": {
+      "K1_flare": "FAILS",
+      "K2_evenness": "FAILS"
+    },
+    "matter_filled_black_hole": {
+      "K1_flare": "FAILS",
+      "K2_evenness": "passes"
+    }
+  },
+  "calibration_checks": [
+    {
+      "check": "empty black hole interior solves the vacuum equations (Ricci = 0)",
+      "pass": true
+    },
+    {
+      "check": "fixed-position observers inside are in free fall (zero acceleration)",
+      "pass": true
+    },
+    {
+      "check": "symbolic q for the empty black hole equals 1 / (2 (1 - x))",
+      "pass": true
+    },
+    {
+      "check": "symbolic evenness ratio equals -1 / (2 (1 - x))",
+      "pass": true
+    },
+    {
+      "check": "matter-filled, k=+1: pressure equation is 2 a a'' + a'^2 + k = 0",
+      "pass": true
+    },
+    {
+      "check": "matter-filled, k=+1: density equation is 3 (a'^2 + k) / a^2",
+      "pass": true
+    },
+    {
+      "check": "matter-filled, k=+0: pressure equation is 2 a a'' + a'^2 + k = 0",
+      "pass": true
+    },
+    {
+      "check": "matter-filled, k=+0: density equation is 3 (a'^2 + k) / a^2",
+      "pass": true
+    },
+    {
+      "check": "matter-filled, k=-1: pressure equation is 2 a a'' + a'^2 + k = 0",
+      "pass": true
+    },
+    {
+      "check": "matter-filled, k=-1: density equation is 3 (a'^2 + k) / a^2",
+      "pass": true
+    },
+    {
+      "check": "measured universe: age from our integrator vs astropy (Gyr)",
+      "got": 13.786885304510932,
+      "expected": 13.786885302009706,
+      "tolerance": 0.005,
+      "pass": true
+    },
+    {
+      "check": "measured universe: q today vs textbook formula Om/2 + Or - OL",
+      "got": -0.5332298685540714,
+      "expected": -0.5325226110890882,
+      "tolerance": 0.002,
+      "pass": true
+    },
+    {
+      "check": "measured universe: redshift where speeding-up began vs (2 OL / Om)^(1/3) - 1",
+      "got": 0.6417546184523182,
+      "expected": 0.6447090163415206,
+      "tolerance": 0.005,
+      "pass": true
+    },
+    {
+      "check": "matter-filled, omega=0.3: numeric age vs textbook closed form (Hubble times)",
+      "got": 0.8087932546603415,
+      "expected": 0.8087932546603416,
+      "tolerance": 1e-08,
+      "pass": true
+    },
+    {
+      "check": "matter-filled, omega=1.0: numeric age vs textbook closed form (Hubble times)",
+      "got": 0.6666666666666667,
+      "expected": 0.6666666666666666,
+      "tolerance": 1e-08,
+      "pass": true
+    },
+    {
+      "check": "matter-filled, omega=2.0: numeric age vs textbook closed form (Hubble times)",
+      "got": 0.5707963267948964,
+      "expected": 0.5707963267948966,
+      "tolerance": 1e-08,
+      "pass": true
+    },
+    {
+      "check": "matter-filled, omega=5.0: numeric age vs textbook closed form (Hubble times)",
+      "got": 0.4419679486213067,
+      "expected": 0.4419679486213064,
+      "tolerance": 1e-08,
+      "pass": true
+    },
+    {
+      "check": "empty black hole: numeric clock time to x=0.1 vs cycloid formula",
+      "got": 0.021750554396642197,
+      "expected": 0.02175055439664214,
+      "tolerance": 1e-09,
+      "pass": true
+    },
+    {
+      "check": "empty black hole: numeric clock time to x=0.5 vs cycloid formula",
+      "got": 0.28539816339744833,
+      "expected": 0.2853981633974484,
+      "tolerance": 1e-09,
+      "pass": true
+    },
+    {
+      "check": "empty black hole: numeric clock time to x=0.9 vs cycloid formula",
+      "got": 0.9490457723982548,
+      "expected": 0.9490457723982544,
+      "tolerance": 1e-09,
+      "pass": true
+    },
+    {
+      "check": "empty black hole: lifetime from singularity to horizon vs pi/2 (units r_s / c)",
+      "got": 1.5707963267948564,
+      "expected": 1.5707963267948966,
+      "tolerance": 1e-08,
+      "pass": true
+    },
+    {
+      "check": "empty black hole: q at x=0.2, finite differences vs symbolic",
+      "got": 0.6250000257073539,
+      "expected": 0.625,
+      "tolerance": 0.0001,
+      "pass": true
+    },
+    {
+      "check": "empty black hole: q at x=0.5, finite differences vs symbolic",
+      "got": 1.000000016684489,
+      "expected": 1.0,
+      "tolerance": 0.0001,
+      "pass": true
+    },
+    {
+      "check": "empty black hole: q at x=0.8, finite differences vs symbolic",
+      "got": 2.5000001561643383,
+      "expected": 2.5000000000000004,
+      "tolerance": 0.0001,
+      "pass": true
+    },
+    {
+      "check": "empty black hole outline equals bound matter-filled outline (max gap, Hubble times)",
+      "got": 1.3322676295501878e-15,
+      "expected": 0.0,
+      "tolerance": 1e-08,
+      "pass": true
+    }
+  ]
+}

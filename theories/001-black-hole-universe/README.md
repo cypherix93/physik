@@ -1,6 +1,6 @@
 # 001: Our universe is inside a black hole
 
-**Status:** open
+**Status:** wounded
 **Started:** 2026-11-17
 
 ## The idea, in the human's words
@@ -27,20 +27,23 @@ Draft, not yet confirmed. The funnel is a history of the universe, not a place. 
 
 ## Claims
 
-Draft breakdown, waiting on the human's sketch and corrections.
+The human confirmed this breakdown matches the picture (2026-11-17).
 
 | ID | Claim | Tag | Status | Evidence |
 |----|-------|-----|--------|----------|
-| C1 | Depth in the funnel is time. Flipped, the universe begins at the singularity and its future lies toward the mouth | `[guess]` | untested | Journal 2026-11-17 (2): matches real black hole interiors, where radius acts as time |
+| C1 | Depth in the funnel is time. Flipped, the universe begins at the singularity and its future lies toward the mouth | `[numeric]` | supported in part | [Experiment 001](experiments/001-funnel-outline/): inside an empty black hole the radius acts as time and free-falling clocks start at the singularity. The flip itself is still in question (see C4) |
 | C2 | The universe is the wall of the funnel and has the same number of dimensions as the parent universe | `[guess]` | untested | Journal 2026-11-17 (2): needs one more dimension than the drawing suggests |
-| C3 | The funnel flares toward the mouth, and that flare is the accelerating expansion we observe | `[guess]` | untested | Journal 2026-11-17 (2): by-hand working says a plain black hole does the opposite. First experiment candidate |
+| C3 | The funnel flares toward the mouth, and that flare is the accelerating expansion we observe | `[numeric]` | refuted in plain form | [Experiment 001](experiments/001-funnel-outline/): with standard relativity and ordinary matter, no black hole outline ever speeds up. Needs an extra ingredient that links the horizon to the inside |
 | C4 | When the parent black hole grows, the universe inside gains more future | `[guess]` | untested | Journal 2026-11-17 (2): conflicts with the time flip as stated |
 | C5 | Universes nest: each one can hold black holes that hold universes | `[guess]` | untested | |
 | C6 | A black hole's mass is proportional to its surface area, which supports the universe being the surface | `[guess]` | needs restating | Mass goes with radius. Entropy (information capacity) goes with area |
 
 ## What would kill it
 
-To be written once the claims are fixed.
+- **Already landed:** the black hole's shape alone does not cause the acceleration (experiment 001). The theory survives only if something ties the expansion inside to the horizon.
+- If no rule linking the horizon to the expansion can match the measured expansion history, C3 is dead in every form.
+- If the time flip cannot be reconciled with a black hole that keeps feeding, C4 is dead.
+- More to be added as claims are tested.
 
 ## Prior art
 
@@ -50,4 +53,5 @@ To be filled by a literature pass. Names to look up, all from memory and unverif
 
 - Is the universe the wall of the funnel (same dimensions as the parent) or the information written on the horizon (one dimension fewer, the holographic idea)? These are different theories.
 - The time flip turns a black hole that eats into one that spits. How does C4 survive that?
-- Does putting matter inside the black hole, instead of leaving it empty, fix the direction problem in C3?
+- Answered by experiment 001: putting matter inside fixes the unevenness but not the lack of acceleration.
+- What could carry information from the horizon to the inside? Candidates to look up: a horizon term acting as dark energy (Gaztañaga), and holographic dark energy, where the horizon's size sets the dark energy density. Both from memory, unverified.

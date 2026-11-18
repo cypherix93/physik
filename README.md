@@ -22,7 +22,7 @@ Experiments are self-contained. One might be forty lines of Python, another a sy
 
 | # | Theory | Status |
 |---|--------|--------|
-| 001 | [Our universe is inside a black hole](theories/001-black-hole-universe/) | open |
+| 001 | [Our universe is inside a black hole](theories/001-black-hole-universe/) | wounded |
 
 Statuses: **open** (still being broken into claims) · **standing** (has survived the tests so far) · **wounded** (a claim failed; the theory needs changing to survive) · **dead** (a core claim failed and no honest repair exists) · **parked** (not testable with what we have).
 
