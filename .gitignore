@@ -1,3 +1,9 @@
 *.log
 temp/
 .claude/worktrees/
+# python
+__pycache__/
+.venv/
+
+# downloaded datasets (each experiment README says how to fetch them)
+theories/*/experiments/*/data/
